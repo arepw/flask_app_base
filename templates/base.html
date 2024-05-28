@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h3 style="font-size: 2em">Hello, world!</h3>
+        <nav>
+            <ul>
+                <li>
+                    <a class="button" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li>
+                    <a class="button" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                <li>
+                    <a class="button" href="{{ url_for('signup') }}">Sign up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

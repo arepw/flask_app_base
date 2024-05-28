@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my Flask App</h1>
+    <p>This is the home page.</p>
+
+    <br>
+    {% if not current_user.is_anonymous %}
+        <i>You are now logged in as "{{ current_user.username }}".</i>
+    {% else %}
+        <i>You are not logged in.</i>
+    {% endif %}
+{% endblock %}
