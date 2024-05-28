@@ -8,6 +8,15 @@
     <h1>Personal page</h1>
     <p>Hi there, <b>{{ user.username }}</b></p>
 
-    <i>Your role is: {{ user.role }}</i>
+    {% if user.roles %}
+    <p>Your roles are:</p>
+    <ul>
+        {% for role in user.roles %}
+            <li>{{ role.name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>You have no roles</p>
+    {% endif %}
 
 {% endblock %}
